@@ -1,20 +1,21 @@
-#include <iostream>
+#include <SFML/Graphics.hpp>
 
-int main() {
-    std::cout << "Стандарт C++: " << __cplusplus << std::endl;
+int main()
+{
+    sf::RenderWindow window(sf::VideoMode(500, 500), "CloudPassword");
+    shape.setFillColor(sf::Color::Green);
 
-    if (__cplusplus == 201703L) {
-        std::cout << "Используется стандарт C++17." << std::endl;
-    } else if (__cplusplus == 202002L) {
-        std::cout << "Используется стандарт C++20." << std::endl;
-    } else if (__cplusplus == 201402L) {
-        std::cout << "Используется стандарт C++14." << std::endl;
-    } else if (__cplusplus == 201103L) {
-        std::cout << "Используется стандарт C++11." << std::endl;
-    } else if (__cplusplus == 199711L) {
-        std::cout << "Используется стандарт C++98." << std::endl;
-    } else {
-        std::cout << "Неизвестный стандарт." << std::endl;
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.display();
     }
 
     return 0;

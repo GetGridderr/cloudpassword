@@ -1,0 +1,5 @@
+all: main.o 
+	g++ main.o -o sfml-app -L"C:\Users\User\Documents\SFML-2.6.2\lib" -lsfml-graphics -lsfml-window -lsfml-system
+ 
+Game.o: main.cpp 
+	g++ -c main.cpp -I"C:\Users\User\Documents\SFML-2.6.2\include"
